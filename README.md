@@ -1,4 +1,3 @@
-
 # 🚀 PromptVault
 
 Sistema de Gestión de Prompts para IA
@@ -8,6 +7,7 @@ Un sistema completo para crear, organizar, versionar y compartir prompts para mo
 ---
 
 ## 📋 Tabla de Contenidos
+
 - [Características](#características)
 - [Requisitos](#requisitos)
 - [Instalación](#instalación)
@@ -21,6 +21,7 @@ Un sistema completo para crear, organizar, versionar y compartir prompts para mo
 ## ✨ Características
 
 ### 🔒 Autenticación y Seguridad
+
 - Sistema de login y registro
 - Validación robusta con Form Requests
 - Políticas de autorización (solo dueño edita)
@@ -28,6 +29,7 @@ Un sistema completo para crear, organizar, versionar y compartir prompts para mo
 - Mensajes de error en español
 
 ### 📝 Gestión de Prompts
+
 - Crear, editar y eliminar prompts
 - Organización por categorías y etiquetas
 - Búsqueda avanzada (título, contenido, descripción)
@@ -37,24 +39,28 @@ Un sistema completo para crear, organizar, versionar y compartir prompts para mo
 - Prompts privados y públicos
 
 ### 🔄 Sistema de Versiones
+
 - Control de versiones de cada prompt
 - Comparación entre versiones
 - Restauración de versiones anteriores
 - Historial completo de cambios
 
 ### 🤝 Colaboración
+
 - Compartir prompts con otros usuarios
 - Prompts públicos y privados
 - Historial de actividades
 - Exportación de datos
 
 ### 🎨 Interfaz
+
 - Dashboard con métricas clave
 - Diseño moderno y responsive
 - Tema claro/oscuro
 - Multi-idioma (Español/Inglés)
 
 ### 🧪 Calidad de Código
+
 - Tests automatizados
 - Validaciones centralizadas
 - Código documentado
@@ -63,6 +69,7 @@ Un sistema completo para crear, organizar, versionar y compartir prompts para mo
 ## 🔧 Requisitos
 
 ### Software Necesario
+
 - PHP: >= 8.2
 - Composer: >= 2.0
 - Node.js: >= 18.0
@@ -70,6 +77,7 @@ Un sistema completo para crear, organizar, versionar y compartir prompts para mo
 - MySQL: >= 8.0 o MariaDB >= 10.3
 
 ### Extensiones de PHP Requeridas
+
 - php-mbstring
 - php-xml
 - php-curl
@@ -80,74 +88,78 @@ Un sistema completo para crear, organizar, versionar y compartir prompts para mo
 ## 📦 Instalación
 
 1. **Clonar el Repositorio**
-	 ```sh
-	 git clone https://github.com/Guillen-cloud/PromptVault-.git
-	 cd PromptVault-
-	 ```
+    ```sh
+    git clone https://github.com/Guillen-cloud/PromptVault-.git
+    cd PromptVault-
+    ```
 2. **Instalar Dependencias**
-	 ```sh
-	 composer install
-	 npm install
-	 ```
+    ```sh
+    composer install
+    npm install
+    ```
 3. **Configurar Variables de Entorno**
-	 ```sh
-	 cp .env.example .env
-	 php artisan key:generate
-	 ```
+    ```sh
+    cp .env.example .env
+    php artisan key:generate
+    ```
 4. **Configurar Base de Datos**
-	 Edita el archivo `.env` con tus credenciales:
-	 ```env
-	 DB_CONNECTION=mysql
-	 DB_HOST=127.0.0.1
-	 DB_PORT=3306
-	 DB_DATABASE=promptvault
-	 DB_USERNAME=tu_usuario
-	 DB_PASSWORD=tu_contraseña
-	 ```
+   Edita el archivo `.env` con tus credenciales:
+    ```env
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=promptvault
+    DB_USERNAME=tu_usuario
+    DB_PASSWORD=tu_contraseña
+    ```
 5. **Crear Base de Datos**
-	 - Opción 1: MySQL Command Line
-		 ```sh
-		 mysql -u root -p
-		 CREATE DATABASE promptvault CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-		 exit;
-		 ```
-	 - Opción 2: Usar script incluido (Windows)
-		 ```sh
-		 setup_database.bat
-		 ```
+    - Opción 1: MySQL Command Line
+        ```sh
+        mysql -u root -p
+        CREATE DATABASE promptvault CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+        exit;
+        ```
+    - Opción 2: Usar script incluido (Windows)
+        ```sh
+        setup_database.bat
+        ```
 6. **Ejecutar Migraciones y Seeders**
-	 ```sh
-	 php artisan migrate
-	 php artisan db:seed
-	 ```
+    ```sh
+    php artisan migrate
+    php artisan db:seed
+    ```
 7. **Compilar Assets**
-	 - Desarrollo
-		 ```sh
-		 npm run dev
-		 ```
-	 - Producción
-		 ```sh
-		 npm run build
-		 ```
+    - Desarrollo
+        ```sh
+        npm run dev
+        ```
+    - Producción
+        ```sh
+        npm run build
+        ```
 8. **Iniciar Servidor**
-	 ```sh
-	 php artisan serve
-	 ```
-	 Ahora puedes acceder a: http://localhost:8000
+    ```sh
+    php artisan serve
+    ```
+    Ahora puedes acceder a: http://localhost:8000
 
 ## ⚙️ Configuración
 
 ### Usuarios de Prueba
+
 Después de ejecutar `php artisan db:seed`, puedes usar:
+
 - **Usuario Demo:**
-	- Email: demo@promptvault.com
-	- Password: password
+    - Email: demo@promptvault.com
+    - Password: password
 - **Usuario Admin:**
-	- Email: admin@promptvault.com
-	- Password: password
+    - Email: admin@promptvault.com
+    - Password: password
 
 ### Configuración de Idioma
+
 El sistema soporta múltiples idiomas:
+
 - Español (por defecto)
 - Inglés
 - Portugués (Brasil)
@@ -158,29 +170,32 @@ Cambiar en: Dashboard → Selector de idioma
 ## 🎯 Uso
 
 ### Crear un Prompt
+
 1. Ve a Prompts en el menú lateral
 2. Click en Nuevo Prompt
 3. Llena el formulario:
-	 - Título
-	 - Contenido
-	 - Descripción
-	 - Categoría
-	 - IA Destino (ChatGPT, Claude, etc.)
-	 - Etiquetas
+    - Título
+    - Contenido
+    - Descripción
+    - Categoría
+    - IA Destino (ChatGPT, Claude, etc.)
+    - Etiquetas
 4. Click en Guardar
 
 ### Buscar Prompts
+
 - Usa la barra de búsqueda en la parte superior para buscar por:
-	- Título
-	- Contenido
-	- Descripción
+    - Título
+    - Contenido
+    - Descripción
 - O usa los filtros avanzados:
-	- Por categoría
-	- Por etiqueta
-	- Por IA destino
-	- Solo favoritos
+    - Por categoría
+    - Por etiqueta
+    - Por IA destino
+    - Solo favoritos
 
 ### Sistema de Versiones
+
 - Abre un prompt
 - Click en Versiones
 - Ver historial completo
@@ -219,17 +234,20 @@ promptvault/
 ## 🛠️ Tecnologías
 
 ### Backend
+
 - Laravel 12 - Framework PHP
 - MySQL 8 - Base de datos
 - PHP 8.2 - Lenguaje
 
 ### Frontend
+
 - Blade - Motor de plantillas
 - Vite - Build tool
 - CSS3 - Estilos personalizados
 - JavaScript (Vanilla) - Interactividad
 
 ### Herramientas
+
 - Composer - Gestor de dependencias PHP
 - NPM - Gestor de dependencias JS
 - Git - Control de versiones
@@ -237,9 +255,11 @@ promptvault/
 ## 👥 Colaboradores
 
 Este proyecto fue desarrollado por:
+
 - Guillen-cloud - Desarrollador Principal
 
 ¿Quieres colaborar?
+
 1. Fork el proyecto
 2. Crea una rama (`git checkout -b feature/nueva-funcionalidad`)
 3. Commit tus cambios (`git commit -m 'Añadir nueva funcionalidad'`)
@@ -273,22 +293,23 @@ npm run dev
 ## 🐛 Solución de Problemas
 
 - **Error: "Class not found"**
-	- `composer dump-autoload`
+    - `composer dump-autoload`
 - **Error en migraciones**
-	- `php artisan migrate:fresh --seed`
+    - `php artisan migrate:fresh --seed`
 - **Assets no se cargan**
-	- `npm run build`
-	- `php artisan storage:link`
+    - `npm run build`
+    - `php artisan storage:link`
 - **Error 500 en producción**
-	- `php artisan config:cache`
-	- `php artisan route:cache`
-	- `php artisan view:cache`
+    - `php artisan config:cache`
+    - `php artisan route:cache`
+    - `php artisan view:cache`
 
 ## 📄 Licencia
 
 Este proyecto está bajo la Licencia MIT. Ver archivo LICENSE para más detalles.
 
 ## 📞 Contacto
+
 - Repositorio: https://github.com/Guillen-cloud/PromptVault-
 - Issues: https://github.com/Guillen-cloud/PromptVault-/issues
 
