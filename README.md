@@ -1,59 +1,297 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# 🚀 PromptVault
 
-## About Laravel
+Sistema de Gestión de Prompts para IA
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Un sistema completo para crear, organizar, versionar y compartir prompts para modelos de inteligencia artificial.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 📋 Tabla de Contenidos
+- [Características](#características)
+- [Requisitos](#requisitos)
+- [Instalación](#instalación)
+- [Configuración](#configuración)
+- [Uso](#uso)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Tecnologías](#tecnologías)
+- [Colaboradores](#colaboradores)
+- [Licencia](#licencia)
 
-## Learning Laravel
+## ✨ Características
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### 🔒 Autenticación y Seguridad
+- Sistema de login y registro
+- Validación robusta con Form Requests
+- Políticas de autorización (solo dueño edita)
+- Protección de rutas con middleware
+- Mensajes de error en español
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 📝 Gestión de Prompts
+- Crear, editar y eliminar prompts
+- Organización por categorías y etiquetas
+- Búsqueda avanzada (título, contenido, descripción)
+- Filtros por categoría, etiqueta, IA destino
+- Marcado de favoritos
+- Contador de usos
+- Prompts privados y públicos
 
-## Laravel Sponsors
+### 🔄 Sistema de Versiones
+- Control de versiones de cada prompt
+- Comparación entre versiones
+- Restauración de versiones anteriores
+- Historial completo de cambios
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 🤝 Colaboración
+- Compartir prompts con otros usuarios
+- Prompts públicos y privados
+- Historial de actividades
+- Exportación de datos
 
-### Premium Partners
+### 🎨 Interfaz
+- Dashboard con métricas clave
+- Diseño moderno y responsive
+- Tema claro/oscuro
+- Multi-idioma (Español/Inglés)
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 🧪 Calidad de Código
+- Tests automatizados
+- Validaciones centralizadas
+- Código documentado
+- Políticas de autorización
 
-## Contributing
+## 🔧 Requisitos
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Software Necesario
+- PHP: >= 8.2
+- Composer: >= 2.0
+- Node.js: >= 18.0
+- NPM: >= 9.0
+- MySQL: >= 8.0 o MariaDB >= 10.3
 
-## Code of Conduct
+### Extensiones de PHP Requeridas
+- php-mbstring
+- php-xml
+- php-curl
+- php-zip
+- php-mysql
+- php-pdo
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 📦 Instalación
 
-## Security Vulnerabilities
+1. **Clonar el Repositorio**
+	 ```sh
+	 git clone https://github.com/Guillen-cloud/PromptVault-.git
+	 cd PromptVault-
+	 ```
+2. **Instalar Dependencias**
+	 ```sh
+	 composer install
+	 npm install
+	 ```
+3. **Configurar Variables de Entorno**
+	 ```sh
+	 cp .env.example .env
+	 php artisan key:generate
+	 ```
+4. **Configurar Base de Datos**
+	 Edita el archivo `.env` con tus credenciales:
+	 ```env
+	 DB_CONNECTION=mysql
+	 DB_HOST=127.0.0.1
+	 DB_PORT=3306
+	 DB_DATABASE=promptvault
+	 DB_USERNAME=tu_usuario
+	 DB_PASSWORD=tu_contraseña
+	 ```
+5. **Crear Base de Datos**
+	 - Opción 1: MySQL Command Line
+		 ```sh
+		 mysql -u root -p
+		 CREATE DATABASE promptvault CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+		 exit;
+		 ```
+	 - Opción 2: Usar script incluido (Windows)
+		 ```sh
+		 setup_database.bat
+		 ```
+6. **Ejecutar Migraciones y Seeders**
+	 ```sh
+	 php artisan migrate
+	 php artisan db:seed
+	 ```
+7. **Compilar Assets**
+	 - Desarrollo
+		 ```sh
+		 npm run dev
+		 ```
+	 - Producción
+		 ```sh
+		 npm run build
+		 ```
+8. **Iniciar Servidor**
+	 ```sh
+	 php artisan serve
+	 ```
+	 Ahora puedes acceder a: http://localhost:8000
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## ⚙️ Configuración
 
-## License
+### Usuarios de Prueba
+Después de ejecutar `php artisan db:seed`, puedes usar:
+- **Usuario Demo:**
+	- Email: demo@promptvault.com
+	- Password: password
+- **Usuario Admin:**
+	- Email: admin@promptvault.com
+	- Password: password
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Configuración de Idioma
+El sistema soporta múltiples idiomas:
+- Español (por defecto)
+- Inglés
+- Portugués (Brasil)
+- Francés
+
+Cambiar en: Dashboard → Selector de idioma
+
+## 🎯 Uso
+
+### Crear un Prompt
+1. Ve a Prompts en el menú lateral
+2. Click en Nuevo Prompt
+3. Llena el formulario:
+	 - Título
+	 - Contenido
+	 - Descripción
+	 - Categoría
+	 - IA Destino (ChatGPT, Claude, etc.)
+	 - Etiquetas
+4. Click en Guardar
+
+### Buscar Prompts
+- Usa la barra de búsqueda en la parte superior para buscar por:
+	- Título
+	- Contenido
+	- Descripción
+- O usa los filtros avanzados:
+	- Por categoría
+	- Por etiqueta
+	- Por IA destino
+	- Solo favoritos
+
+### Sistema de Versiones
+- Abre un prompt
+- Click en Versiones
+- Ver historial completo
+- Comparar versiones
+- Restaurar versión anterior
+
+## 📁 Estructura del Proyecto
+
+```
+promptvault/
+├── app/
+│   ├── Http/
+│   │   └── Controllers/      # Controladores
+│   └── Models/               # Modelos Eloquent
+├── database/
+│   ├── migrations/           # Migraciones de BD
+│   └── seeders/              # Datos de prueba
+├── resources/
+│   ├── css/                  # Estilos
+│   ├── js/                   # JavaScript
+│   └── views/                # Vistas Blade
+│       ├── auth/             # Login/Register
+│       ├── layouts/          # Layout principal
+│       ├── prompts/          # CRUD de prompts
+│       ├── categorias/       # Gestión de categorías
+│       └── ...
+├── routes/
+│   └── web.php               # Rutas de la aplicación
+├── public/                   # Assets públicos
+├── .env.example              # Variables de entorno ejemplo
+├── composer.json             # Dependencias PHP
+├── package.json              # Dependencias JS
+└── README.md                 # Este archivo
+```
+
+## 🛠️ Tecnologías
+
+### Backend
+- Laravel 12 - Framework PHP
+- MySQL 8 - Base de datos
+- PHP 8.2 - Lenguaje
+
+### Frontend
+- Blade - Motor de plantillas
+- Vite - Build tool
+- CSS3 - Estilos personalizados
+- JavaScript (Vanilla) - Interactividad
+
+### Herramientas
+- Composer - Gestor de dependencias PHP
+- NPM - Gestor de dependencias JS
+- Git - Control de versiones
+
+## 👥 Colaboradores
+
+Este proyecto fue desarrollado por:
+- Guillen-cloud - Desarrollador Principal
+
+¿Quieres colaborar?
+1. Fork el proyecto
+2. Crea una rama (`git checkout -b feature/nueva-funcionalidad`)
+3. Commit tus cambios (`git commit -m 'Añadir nueva funcionalidad'`)
+4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
+5. Abre un Pull Request
+
+Ver `GUIA_COLABORACION.md` para más detalles.
+
+## 📝 Comandos Útiles
+
+```sh
+# Limpiar caché
+php artisan cache:clear
+php artisan config:clear
+php artisan view:clear
+
+# Resetear base de datos
+php artisan migrate:fresh --seed
+
+# Ejecutar tests
+php artisan test
+
+# Ver rutas
+php artisan route:list
+
+# Compilar assets en modo watch
+yarn dev
+npm run dev
+```
+
+## 🐛 Solución de Problemas
+
+- **Error: "Class not found"**
+	- `composer dump-autoload`
+- **Error en migraciones**
+	- `php artisan migrate:fresh --seed`
+- **Assets no se cargan**
+	- `npm run build`
+	- `php artisan storage:link`
+- **Error 500 en producción**
+	- `php artisan config:cache`
+	- `php artisan route:cache`
+	- `php artisan view:cache`
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver archivo LICENSE para más detalles.
+
+## 📞 Contacto
+- Repositorio: https://github.com/Guillen-cloud/PromptVault-
+- Issues: https://github.com/Guillen-cloud/PromptVault-/issues
+
+---
+
+Desarrollado con ❤️ para la gestión eficiente de prompts de IA
