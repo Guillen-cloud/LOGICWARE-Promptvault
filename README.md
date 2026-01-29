@@ -137,11 +137,22 @@ Un sistema completo para crear, organizar, versionar y compartir prompts para mo
         ```sh
         npm run build
         ```
-8. **Iniciar Servidor**
+
+8. **Iniciar Servidor de Desarrollo**
+
     ```sh
     php artisan serve
     ```
-    Ahora puedes acceder a: http://localhost:8000
+
+    Esto levantará el servidor de Laravel en http://localhost:8000
+
+    Si también quieres levantar el entorno de frontend (Vite):
+
+    ```sh
+    npm run dev
+    ```
+
+    Esto habilita recarga automática y assets modernos para desarrollo.
 
 ## ⚙️ Configuración
 
