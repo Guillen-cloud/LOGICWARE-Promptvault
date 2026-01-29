@@ -45,4 +45,14 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Verifica si el usuario es un administrador basándose en su email.
+     *
+     * @return bool
+     */
+    public function isAdmin(): bool
+    {
+        return in_array($this->email, config('auth.admins', []));
+    }
 }

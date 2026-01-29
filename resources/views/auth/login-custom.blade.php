@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - PromptVault</title>
-    <link rel="stylesheet" href="{{ asset('css/login-light.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/login-custom.css') }}">
 </head>
 
 <body>

@@ -5,6 +5,31 @@
         </h2>
     </x-slot>
 
+    {{-- Estilos para mejorar la visualización del Chatbot --}}
+    <style>
+        #ai-chat-widget * {
+            white-space: pre-wrap;
+            /* Respeta saltos de línea y espacios */
+        }
+
+        #ai-chat-widget ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        #ai-chat-widget ol {
+            list-style-type: decimal;
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        #ai-chat-widget strong {
+            font-weight: bold;
+            color: #60a5fa;
+        }
+    </style>
+
     <div class="py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
