@@ -109,7 +109,7 @@ php artisan serve
 
 ### .env
 ```env
-OPENAI_API_KEY=Your-key-here
+OPENAI_API_KEY=
 OPENAI_MODEL=gpt-4o-mini
 ```
 
