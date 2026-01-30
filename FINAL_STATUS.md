@@ -109,7 +109,7 @@ php artisan serve
 
 ### .env
 ```env
-OPENAI_API_KEY=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
+OPENAI_API_KEY=Your-key-here
 OPENAI_MODEL=gpt-4o-mini
 ```
 
