@@ -112,4 +112,15 @@ return [
 
     'password_timeout' => env('AUTH_PASSWORD_TIMEOUT', 10800),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Admin Users
+    |--------------------------------------------------------------------------
+    |
+    | Una lista de correos electrónicos que tendrán privilegios de administrador
+    | en toda la aplicación. Se carga desde la variable de entorno ADMIN_EMAILS.
+    |
+    */
+    'admins' => array_filter(explode(',', env('ADMIN_EMAILS', ''))),
+
 ];

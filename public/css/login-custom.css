@@ -1,0 +1,502 @@
+/* ==============================
+   PROMPT CREATE - DARK STYLES
+   Scoped to .login-backdrop and .login-container
+   ============================== */
+
+:root {
+    --bg-start: #0f1724;
+    /* near black-blue */
+    --bg-end: #111827;
+    /* dark gray */
+    --card-bg: rgba(15, 23, 36, 0.7);
+    --card-border: rgba(255, 255, 255, 0.04);
+    --muted: #9ca3af;
+    --text: #e6eef8;
+    --accent-1: #6d28d9;
+    /* purple */
+    --accent-2: #2563eb;
+    /* blue */
+    --danger: #f87171;
+}
+
+/* Backdrop covers the page only for this view */
+.login-backdrop {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--bg-start) 0%, #0b1220 60%, #0b0f1a 100%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 80px 20px;
+    /* leave space for nav */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text);
+}
+
+/* Scoped nav/main overrides only when the login backdrop is used
+   This prevents global changes when other pages (eg. prompts/create)
+   are rendered. The rules will only apply if `nav` or `main` are
+   descendants of `.login-backdrop`. */
+.login-backdrop {
+    /* keep the body-level dark background scoped to the backdrop element */
+    background: linear-gradient(135deg, #071021 0%, #04101a 60%, #020812 100%);
+}
+
+/* Only style nav when it appears inside the login backdrop */
+.login-backdrop nav {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border-bottom-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+.login-backdrop nav a,
+.login-backdrop nav button,
+.login-backdrop nav div {
+    color: var(--muted) !important;
+}
+
+.login-backdrop nav .fill-current {
+    color: var(--text) !important;
+    fill: currentColor !important;
+}
+
+/* Make the main container area (inside .max-w-7xl) transparent so our backdrop shows */
+.login-backdrop~main,
+.login-backdrop main {
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.login-backdrop~main .max-w-7xl,
+.login-backdrop main .max-w-7xl {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Override top nav button backgrounds (logout trigger) when inside backdrop */
+.login-backdrop nav button[aria-expanded],
+.login-backdrop nav .inline-flex {
+    background: transparent !important;
+    border-color: transparent !important;
+}
+
+/* Ensure body and html are fully dark for login pages ONLY when .login-page OR .bg-slate-900 classes present */
+body.bg-slate-900 {
+    background: linear-gradient(135deg, #071021 0%, #04101a 60%, #020812 100%) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body.bg-slate-900 nav {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border-bottom: none !important;
+}
+
+body.bg-slate-900 main {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+body.bg-slate-900 main .max-w-7xl {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Do NOT apply dark theme to regular login-container used in auth/login-custom.blade.php */
+/* Only apply it when we have login-backdrop + login-page class combo */
+html:not(.login-custom-page) .login-backdrop {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--bg-start) 0%, #0b1220 60%, #0b0f1a 100%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 80px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text);
+}
+
+.login-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.login-wrapper {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    border-radius: 14px;
+    backdrop-filter: blur(8px) saturate(120%);
+    -webkit-backdrop-filter: blur(8px) saturate(120%);
+    border: 1px solid var(--card-border);
+    width: 100%;
+    max-width: 640px;
+    padding: 32px;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo Section */
+.login-logo {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.login-logo h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+
+.login-logo p {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Alerts */
+.alert {
+    padding: 12px 14px;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    display: flex;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    color: var(--text);
+    animation: slideIn 0.25s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.alert-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.alert-error {
+    color: var(--danger);
+}
+
+.alert-error .alert-icon {
+    color: var(--danger);
+}
+
+.alert-success {
+    color: #34d399;
+}
+
+.alert-success .alert-icon {
+    color: #34d399;
+}
+
+.alert-content ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.alert-content ul li {
+    margin-top: 4px;
+}
+
+.alert-content p {
+    margin-bottom: 6px;
+    color: var(--text);
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.label-text {
+    color: var(--muted);
+}
+
+/* Input Fields */
+.form-input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    color: var(--text);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: rgba(110, 231, 183, 0.12);
+    box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.form-input::placeholder {
+    color: var(--muted);
+}
+
+.form-input.error {
+    border-color: rgba(248, 113, 113, 0.5);
+    background-color: rgba(248, 113, 113, 0.03);
+}
+
+/* Password Wrapper */
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 14px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 8px;
+    opacity: 0.7
+}
+
+/* Form Error */
+.form-error {
+    display: block;
+    color: var(--danger);
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+/* Checkbox */
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px
+}
+
+.checkbox-input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--accent-1);
+    margin: 0
+}
+
+.checkbox-label {
+    margin-left: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--muted)
+}
+
+/* Button */
+.btn {
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+    color: white;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.12)
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(37, 99, 235, 0.18)
+}
+
+.btn+.btn {
+    margin-top: 10px
+}
+
+/* Ghost / secondary button for dark theme */
+.btn-ghost {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--text);
+    box-shadow: none;
+}
+
+.btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.02);
+    transform: translateY(-1px);
+}
+
+/* Form Links */
+.form-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px
+}
+
+.link-forgot,
+.link-register {
+    font-size: 13px;
+    color: var(--accent-2);
+    text-decoration: none;
+    font-weight: 500
+}
+
+.link-forgot:hover,
+.link-register:hover {
+    text-decoration: underline
+}
+
+/* Login Footer */
+.login-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 12px;
+    color: var(--muted);
+    font-size: 12px
+}
+
+/* Decorations */
+.decoration {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.08;
+    z-index: 1
+}
+
+.login-backdrop .decoration-1 {
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle at 30% 30%, rgba(109, 40, 217, 0.28), transparent 40%);
+    top: -120px;
+    right: -80px;
+    animation: float 10s ease-in-out infinite
+}
+
+.login-backdrop .decoration-2 {
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle at 70% 70%, rgba(37, 99, 235, 0.22), transparent 40%);
+    bottom: -90px;
+    left: -60px;
+    animation: float 12s ease-in-out infinite reverse
+}
+
+.login-backdrop .decoration-3 {
+    display: none
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0)
+    }
+
+    50% {
+        transform: translateY(18px)
+    }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .login-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .login-wrapper {
+        max-width: 100%;
+        padding: 20px;
+        border-radius: 12px
+    }
+
+    .login-backdrop {
+        padding: 40px 16px
+    }
+}
+
+@media (max-width: 480px) {
+    .login-wrapper {
+        padding: 16px
+    }
+
+    .login-logo h1 {
+        font-size: 18px
+    }
+
+    .form-input {
+        padding: 10px
+    }
+
+    .decoration {
+        display: none
+    }
+}
+
+/* Loading State */
+.btn-loading .btn-text {
+    opacity: 0
+}
+
+.btn-loading::after {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-top-color: var(--text);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg)
+    }
+}

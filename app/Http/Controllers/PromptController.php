@@ -157,7 +157,7 @@ class PromptController extends Controller
         );
 
         return redirect()
-            ->route('prompts.show', $prompt)
+            ->route('prompts.dashboard')
             ->with('status', 'Prompt creado correctamente.');
     }
 

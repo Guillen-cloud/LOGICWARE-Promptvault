@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PromptVault</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @stack('styles')
 </head>
 
-<body class="bg-gray-100">
-    @include('layouts.navigation')
+<body class="@if(trim($__env->yieldPushContent('bodyClass')))@stack('bodyClass')@else bg-gray-100 @endif">
+    @hasSection('hideNavigation')
+    @else
+        @include('layouts.navigation')
+    @endif
 
     <main class="py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
