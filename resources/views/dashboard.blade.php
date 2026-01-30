@@ -35,7 +35,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
 
                 <p class="text-gray-700 mb-4">
-                    Bienvenido a <strong>PromptVault</strong>.
+                    Bienvenidoooo a <strong>PromptVault</strong>.
                 </p>
 
                 {{-- Acción principal --}}
