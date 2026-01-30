@@ -214,6 +214,9 @@ Cambiar en: Dashboard → Selector de idioma
 - Restaurar versión anterior
 
 ## 📁 Estructura del Proyecto
+<img width="293" height="591" alt="image" src="https://github.com/user-attachments/assets/c4861f36-0995-403b-b077-6be594732f78" />
+<img width="279" height="574" alt="image" src="https://github.com/user-attachments/assets/fc5b517e-b078-49c8-8d74-bfe446c95f1b" />
+
 
 ```
 promptvault/
