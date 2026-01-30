@@ -15,6 +15,7 @@ use App\Http\Controllers\AiChatController;
 
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminPromptController;
+use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Middleware\CheckAdmin;
 
 /*
@@ -165,7 +166,8 @@ Route::middleware(['auth', CheckAdmin::class])
         Route::delete('/prompts/{prompt}', [AdminPromptController::class, 'destroy'])
             ->name('prompts.destroy');
 
-        // Aquí podrías añadir gestión de usuarios, categorías, etc.
+        // Gestión de usuarios
+        Route::resource('users', AdminUserController::class);
     });
 
 require __DIR__ . '/auth.php';
