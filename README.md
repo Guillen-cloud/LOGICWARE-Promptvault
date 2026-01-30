@@ -218,32 +218,6 @@ Cambiar en: Dashboard → Selector de idioma
 <img width="279" height="574" alt="image" src="https://github.com/user-attachments/assets/fc5b517e-b078-49c8-8d74-bfe446c95f1b" />
 
 
-```
-promptvault/
-├── app/
-│   ├── Http/
-│   │   └── Controllers/      # Controladores
-│   └── Models/               # Modelos Eloquent
-├── database/
-│   ├── migrations/           # Migraciones de BD
-│   └── seeders/              # Datos de prueba
-├── resources/
-│   ├── css/                  # Estilos
-│   ├── js/                   # JavaScript
-│   └── views/                # Vistas Blade
-│       ├── auth/             # Login/Register
-│       ├── layouts/          # Layout principal
-│       ├── prompts/          # CRUD de prompts
-│       ├── categorias/       # Gestión de categorías
-│       └── ...
-├── routes/
-│   └── web.php               # Rutas de la aplicación
-├── public/                   # Assets públicos
-├── .env.example              # Variables de entorno ejemplo
-├── composer.json             # Dependencias PHP
-├── package.json              # Dependencias JS
-└── README.md                 # Este archivo
-```
 
 ## 🛠️ Tecnologías
 
